@@ -17,6 +17,11 @@
         </Content>
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="test.png" />
+      <None Remove="code.png" />
+    </ItemGroup>
+
     <PropertyGroup>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>

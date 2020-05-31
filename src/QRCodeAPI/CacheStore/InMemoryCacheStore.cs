@@ -27,13 +27,13 @@ namespace QRCodeAPI.CacheStore
             var cacheOptions = new MemoryCacheEntryOptions();
             cacheOptions.SetSlidingExpiration(TimeSpan.FromMinutes(30));
             _logger.LogTrace($"{TAG} Adding item to cache.");
-            await Task.Run(() => _cache.Set(key, item, cacheOptions));
+            await Task.Run(() => _cache.Set(key.Key, item, cacheOptions));
         }
 
         public async Task<TItem> GetAsync<TItem>(ICacheKey key) where TItem : class
         {
             _logger.LogTrace($"{TAG} GetAsync called for {key.ToString()}");
-            return await Task.Run(() => _cache.Get<TItem>(key));
+            return await Task.Run(() => _cache.Get<TItem>(key.Key));
         }
     }
 }

@@ -29,8 +29,7 @@ namespace QRCodeAPI
         {
             services.AddControllers();
             services.AddHttpClient<IQrClient, GoQrClient>();
-            services.AddSingleton(typeof(IFileProvider), service =>
-                new PhysicalFileProvider(Directory.GetCurrentDirectory()));
+            services.AddTransient<IQrProvider, FileQrProvider>();
             services.AddTransient<IQrService, GoQrService>();
             services.AddMemoryCache();
             services.AddTransient<ICacheStore, InMemoryCacheStore>();

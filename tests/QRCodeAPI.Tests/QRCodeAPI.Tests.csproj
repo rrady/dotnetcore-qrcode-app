@@ -14,7 +14,13 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\src\QRCodeAPI\QRCodeAPI.csproj" />
+      <ProjectReference Include="..\..\src\QRCodeAPI\QRCodeAPI.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="code.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>
